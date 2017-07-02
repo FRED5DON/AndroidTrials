@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CotJS</title>
+</head>
+<body>
+<button id="async">Async</button>
+<br/>
+<button id="sync">Sync</button>
+
+<div id="content">
+
+</div>
+
+<script src="../../app/core/cotjs.js"></script>
+<script>
+    var Cotjs = new CotJS({
+        url: 'http://192.168.1.5:8088/api/query?word=win10&type=0&category=0&frequent=10&match=20&timeSort=31'
+    });
+
+    document.querySelector('#async').addEventListener('click',function(){
+        Cotjs.$callback(function (what, data, message) {
+            if(data){
+                document.querySelector('#content').innerHTML=JSON.stringify(data);
+            }
+            CotJS.log(">>> %s","$callback("+what+","+data+",{})");
+        }).$request();
+    });
+
+    document.querySelector('#sync').addEventListener('click',function(){
+        Cotjs.$request(null,true,function(data){
+            if(data){
+                document.querySelector('#content').innerHTML=JSON.stringify(data);
+            }
+            CotJS.log(">>> %s","$request("+data+")");
+        });
+    });
+
+</script>
+</body>
+</html>
