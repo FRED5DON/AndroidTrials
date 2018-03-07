@@ -8,7 +8,7 @@ import android.view.Window;
  * Created by fred on 2018/3/3.
  */
 
-public class Finder implements IFinder {
+final class Finder implements IFinder {
 
     @Override
     public View findView(Object object, int resId) {
@@ -38,4 +38,3 @@ public class Finder implements IFinder {
     }
 
 }
-//tangfei  huaidan

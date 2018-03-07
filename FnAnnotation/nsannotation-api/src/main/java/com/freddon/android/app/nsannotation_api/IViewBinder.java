@@ -6,7 +6,7 @@ package com.freddon.android.app.nsannotation_api;
 
 public interface IViewBinder<T> {
 
-    public void bindView(T target, Object object, IFinder finder) ;
+    void bindView(T target, Object object, IFinder finder) ;
 
     void unbind(T target);
 }

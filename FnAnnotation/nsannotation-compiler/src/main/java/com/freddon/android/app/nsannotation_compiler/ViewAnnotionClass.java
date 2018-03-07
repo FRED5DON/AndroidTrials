@@ -53,7 +53,6 @@ public class ViewAnnotionClass {
 //
 //    void unbind(Object target);}
 
-        //public void bindView(Object target, Object object, Finder finder) ;
         MethodSpec.Builder finderBuilder = MethodSpec.methodBuilder("bindView")
                 .returns(void.class)
                 .addModifiers(Modifier.PUBLIC)

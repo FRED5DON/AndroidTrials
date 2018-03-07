@@ -44,7 +44,7 @@ public class NSViewProcessor extends AbstractProcessor {
                 viewAnnotionClass.addField(viewField);
 
         }
-        $messager.printMessage(Diagnostic.Kind.NOTE,">>>>>>>>>>>>>>>>>>>>>>");
+//        $messager.printMessage(Diagnostic.Kind.NOTE,">>>>>>>>>>>>>>>>>>>>>>");
 
         for(ViewAnnotionClass viewAnnotionClass :annotionClassesMap.values()){
             try {

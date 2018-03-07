@@ -25,6 +25,9 @@ android {
 }
 
 dependencies {
+    implementation project(":nsannotation-api")
+    provided project(':nsannotations')
+    kapt project(':nsannotation-compiler')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
@@ -33,11 +36,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-//    implementation 'com.jakewharton:butterknife:5.1.1'
-//    implementation 'com.jakewharton:butterknife:8.8.1'
-//    kapt 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation project(':nsannotations')
-    implementation project(":nsannotation-api")
-    kapt project(':nsannotation-compiler')
 
 }
